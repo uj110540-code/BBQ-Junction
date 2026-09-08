@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BBQ JUNCTION SASKATOON | Halal Pakistani & Indian Cuisine</title>
+
+<style>
+
+/* ================= GENERAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#111;
+    color:#fff;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(0,0,0,.94);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 5%;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+
+/* ================= LOGO ================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    width:210px;
+    height:95px;
+    overflow:visible;
+}
+
+.logo img{
+    width:190px;
+    height:90px;
+    object-fit:contain;
+    object-position:center;
+    transform:scale(1.12);
+    filter:brightness(1.15) contrast(1.15) saturate(1.1);
+
+}
+
+
+/* ================= NAVIGATION ================= */
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:17px;
+    margin-left:20px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+    white-space:nowrap;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#f7a900;
+}
+
+.order-btn{
+    background:#f7a900;
+    color:#111 !important;
+    padding:11px 17px;
+    border-radius:25px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    min-height:650px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1s ease;
+}
+
+.hero-slide.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    transform:scale(1.04);
+}
+
+.hero-slide.active .hero-bg{
+    animation:zoomFood 7s ease forwards;
+}
+
+@keyframes zoomFood{
+    from{
+        transform:scale(1.04);
+    }
+
+    to{
+        transform:scale(1.12);
+    }
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.40),
+        rgba(0,0,0,.65)
+    );
+}
+
+.hero-content{
+    position:absolute;
+    top:50%;
+    left:8%;
+    transform:translateY(-50%);
+    max-width:650px;
+    z-index:5;
+}
+
+.hero-content h1{
+    font-size:58px;
+    line-height:1.05;
+    margin-bottom:18px;
+    text-transform:uppercase;
+}
+
+.hero-content h1 span{
+    color:#f7a900;
+}
+
+.hero-content p{
+    font-size:20px;
+    line-height:1.6;
+    color:#eee;
+    margin-bottom:28px;
+}
+
+.hero-btns{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 25px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.btn-main{
+    background:#f7a900;
+    color:#111;
+}
+
+.btn-dark{
+    border:1px solid #fff;
+    color:#fff;
+}
+
+
+/* ================= HERO FOOD CIRCLES ================= */
+
+.hero-food-strip{
+    position:absolute;
+    right:6%;
+    bottom:65px;
+    z-index:10;
+    display:flex;
+    gap:12px;
+}
+
+.hero-food-strip img{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #fff;
+    box-shadow:0 5px 20px #000;
+}
+
+
+/* ================= HERO ARROWS ================= */
+
+.hero-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.5);
+    background:rgba(0,0,0,.5);
+    color:white;
+    font-size:25px;
+    z-index:20;
+    cursor:pointer;
+}
+
+.hero-prev{
+    left:25px;
+}
+
+.hero-next{
+    right:25px;
+}
+
+
+/* ================= HERO DOTS ================= */
+
+.hero-dots{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:8px;
+    z-index:20;
+}
+
+.hero-dot{
+    width:10px;
+    height:10px;
+    background:#fff;
+    border-radius:50%;
+    cursor:pointer;
+    opacity:.5;
+}
+
+.hero-dot.active{
+    opacity:1;
+    background:#f7a900;
+    transform:scale(1.3);
+}
+
+
+/* ================= OFFERS ================= */
+
+.offers{
+    padding:70px 6%;
+    background:#181818;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title small{
+    color:#f7a900;
+    font-size:15px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-size:40px;
+    margin-top:8px;
+}
+
+.offer-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.offer{
+    min-height:220px;
+    border-radius:18px;
+    overflow:hidden;
+    position:relative;
+    background-size:cover;
+    background-position:center;
+}
+
+.offer::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.25)
+    );
+}
+
+.offer-content{
+    position:relative;
+    z-index:2;
+    padding:40px;
+}
+
+.offer-content h3{
+    font-size:31px;
+    color:#f7a900;
+    margin-bottom:10px;
+}
+
+.offer-content p{
+    font-size:17px;
+}
+
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+    padding:75px 6%;
+    background:#101010;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:22px;
+}
+
+.category{
+    text-align:center;
+    cursor:pointer;
+}
+
+.category img{
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #292929;
+    transition:.4s;
+}
+
+.category:hover img{
+    transform:rotate(8deg) scale(1.08);
+    border-color:#f7a900;
+}
+
+.category h3{
+    margin-top:12px;
+    font-size:15px;
+}
+
+
+/* ================= FOOD SLIDER ================= */
+
+.food-section{
+    padding:80px 6%;
+    background:#181818;
+}
+
+.slider-wrap{
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+}
+
+.food-slider{
+    display:flex;
+    gap:22px;
+    overflow:hidden;
+    scroll-behavior:smooth;
+}
+
+.food-card{
+    min-width:270px;
+    background:#242424;
+    border-radius:17px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.3);
+    transition:.35s;
+    cursor:pointer;
+}
+
+.food-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 35px rgba(0,0,0,.55);
+}
+
+.food-card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.food-info{
+    padding:18px;
+}
+
+.food-info h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.food-info p{
+    color:#bbb;
+    font-size:14px;
+    min-height:38px;
+}
+
+.price{
+    color:#f7a900;
+    font-size:19px;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+.slider-btn{
+    position:absolute;
+    top:43%;
+    transform:translateY(-50%);
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:0;
+    background:#f7a900;
+    color:#111;
+    font-size:25px;
+    cursor:pointer;
+    z-index:5;
+}
+
+.left-btn{
+    left:-22px;
+}
+
+.right-btn{
+    right:-22px;
+}
+
+
+/* ================= MENU ================= */
+
+.menu{
+    padding:80px 6%;
+    background:#0f0f0f;
+}
+
+.menu-category{
+    max-width:1200px;
+    margin:0 auto 60px;
+}
+
+.menu-category-title{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.menu-category-title h2{
+    font-size:30px;
+    color:#f7a900;
+}
+
+.menu-category-title span{
+    height:1px;
+    flex:1;
+    background:#333;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.menu-item{
+    background:#1c1c1c;
+    padding:17px;
+    border-radius:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    border:1px solid #292929;
+    transition:.3s;
+}
+
+.menu-item:hover{
+    border-color:#f7a900;
+    transform:translateY(-3px);
+}
+
+.menu-item h3{
+    font-size:16px;
+}
+
+.menu-price{
+    color:#f7a900;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about{
+    padding:90px 8%;
+    background:#191919;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:55px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    height:470px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.about-text small{
+    color:#f7a900;
+    font-weight:bold;
+}
+
+.about-text h2{
+    font-size:42px;
+    margin:12px 0 20px;
+}
+
+.about-text p{
+    color:#ccc;
+    line-height:1.8;
+    font-size:16px;
+}
+
+.about-list{
+    margin-top:25px;
+    line-height:2;
+}
+
+
+/* ================= LOCATION ================= */
+
+.location{
+    padding:80px 6%;
+    background:#101010;
+}
+
+.location-box{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.location-info{
+    background:#1c1c1c;
+    border-radius:18px;
+    padding:35px;
+}
+
+.location-info h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.location-info p{
+    color:#ccc;
+    line-height:1.9;
+    margin-bottom:15px;
+}
+
+.map{
+    min-height:350px;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.map iframe{
+    width:100%;
+    height:100%;
+    min-height:350px;
+    border:0;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#050505;
+    padding:55px 6% 20px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.footer-logo img{
+    width:180px;
+    height:90px;
+    object-fit:contain;
+    object-position:left center;
+    margin-bottom:15px;
+}
+
+.footer-col h3{
+    color:#f7a900;
+    margin-bottom:18px;
+}
+
+.footer-col p,
+.footer-col a{
+    color:#aaa;
+    text-decoration:none;
+    line-height:2;
+    display:block;
+}
+
+.footer-col a:hover{
+    color:#f7a900;
+}
+
+.copyright{
+    text-align:center;
+    color:#777;
+    border-top:1px solid #222;
+    margin-top:40px;
+    padding-top:20px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width:1150px){
+
+    header{
+        padding:8px 3%;
+    }
+
+    .logo img{
+        width:150px;
+        height:75px;
+    }
+
+    nav{
+        gap:11px;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .order-btn{
+        padding:9px 13px;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .menu-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-content h1{
+        font-size:45px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+    header{
+        padding:8px 5%;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .logo img{
+        width:160px;
+        height:75px;
+    }
+
+    .hero-content{
+        left:8%;
+        right:8%;
+    }
+
+    .hero-content h1{
+        font-size:37px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    .hero-food-strip{
+        right:50%;
+        transform:translateX(50%);
+        bottom:60px;
+    }
+
+    .hero-food-strip img{
+        width:55px;
+        height:55px;
+    }
+
+    .offer-grid,
+    .about,
+    .location-box{
+        grid-template-columns:1fr;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about img{
+        height:300px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .hero-arrow{
+        width:40px;
+        height:40px;
+    }
+
+    .hero-prev{
+        left:10px;
+    }
+
+    .hero-next{
+        right:10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+    <img src="https://cdn3.didevelop.com/public/logos/0dfd5d08261d8c99a3fb8666cb10efd9.png"
+    alt="BBQ Junction Logo">
+</div>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#offers">Offers</a>
+    <a href="#categories">Menu</a>
+    <a href="#top-dishes">Top Dishes</a>
+    <a href="#loved">Most Loved</a>
+    <a href="#location">Location</a>
+    <a href="#contact">Contact</a>
+    <a class="order-btn" href="#menu">Order Online</a>
+</nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+
+<!-- SLIDE 1 -->
+
+<div class="hero-slide active">
+
+<div class="hero-bg"
+style="background-image:url('https://images.unsplash.com/photo-1589302168068-964664d93dc0');">
+</div>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h1>Authentic <span>Pakistani</span> Taste</h1>
+
+<p>
+Fresh Pakistani and Indian Halal food prepared with traditional flavors,
+premium ingredients and authentic spices.
+</p>
+
+<div class="hero-btns">
+<a href="#menu" class="btn btn-main">Explore Menu</a>
+<a href="#location" class="btn btn-dark">Find Us</a>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SLIDE 2 -->
+
+<div class="hero-slide">
+
+<div class="hero-bg"
+style="background-image:url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0');">
+</div>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h1>Hot & Fresh <span>Tikka</span></h1>
+
+<p>
+Enjoy juicy BBQ Tikka, traditional Pakistani flavors and freshly grilled
+specialties at BBQ Junction Saskatoon.
+</p>
+
+<div class="hero-btns">
+<a href="#top-dishes" class="btn btn-main">View Top Dishes</a>
+<a href="#menu" class="btn btn-dark">Full Menu</a>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SLIDE 3 -->
+
+<div class="hero-slide">
+
+<div class="hero-bg"
+style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947');">
+</div>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h1>BBQ <span>Platter</span></h1>
+
+<p>
+A delicious selection of grilled favorites made for sharing with family
+and friends.
+</p>
+
+<div class="hero-btns">
+<a href="#loved" class="btn btn-main">Most Loved Meals</a>
+<a href="#menu" class="btn btn-dark">See Menu</a>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SLIDE 4 -->
+
+<div class="hero-slide">
+
+<div class="hero-bg"
+style="background-image:url('https://images.unsplash.com/photo-1574653853027-5382a3d23a15');">
+</div>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h1>Fresh <span>Pakistani</span> Food</h1>
+
+<p>
+Fresh naan, refreshing drinks and classic Pakistani dishes for the
+perfect family meal.
+</p>
+
+<div class="hero-btns">
+<a href="#menu" class="btn btn-main">Order Your Meal</a>
+<a href="#location" class="btn btn-dark">Visit Us</a>
+</div>
+
+</div>
+
+</div>
+
+
+<button class="hero-arrow hero-prev" onclick="changeHero(-1)">&lsaquo;</button>
+<button class="hero-arrow hero-next" onclick="changeHero(1)">&rsaquo;</button>
+
+
+<div class="hero-food-strip">
+
+<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0"
+alt="Biryani">
+
+<img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0"
+alt="Tikka">
+
+<img src="https://images.unsplash.com/photo-1655979284091-eea0e93405ee?auto=format&fit=crop&w=1000&q=80"
+alt="Roghni Naan">
+
+<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e"
+alt="Soda Drinks">
+
+</div>
+
+
+<div class="hero-dots">
+
+<span class="hero-dot active" onclick="goHero(0)"></span>
+<span class="hero-dot" onclick="goHero(1)"></span>
+<span class="hero-dot" onclick="goHero(2)"></span>
+<span class="hero-dot" onclick="goHero(3)"></span>
+
+</div>
+
+</section>
+
+
+<!-- ================= OFFERS ================= -->
+
+<section class="offers" id="offers">
+
+<div class="section-title">
+<small>Special Offers</small>
+<h2>Today's Offers</h2>
+</div>
+
+
+<div class="offer-grid">
+
+<div class="offer"
+style="background-image:url('https://images.unsplash.com/photo-1563379091339-03246963d96c');">
+
+<div class="offer-content">
+<h3>10% Off Indian Dishes</h3>
+<p>Enjoy delicious Indian favorites with a special offer.</p>
+</div>
+
+</div>
+
+
+<div class="offer"
+style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947');">
+
+<div class="offer-content">
+<h3>Weekend Special</h3>
+<p>Bring your family and enjoy our BBQ specialties.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories" id="categories">
+
+<div class="section-title">
+<small>Explore Our Menu</small>
+<h2>Food Categories</h2>
+</div>
+
+
+<div class="category-grid">
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
+<h3>Appetizers</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+<h3>Burgers</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
+<h3>Karahi</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0">
+<h3>BBQ Special</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0">
+<h3>Rice</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
+<h3>Vegetarian</h3>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TOP DISHES ================= -->
+
+<section class="food-section" id="top-dishes">
+
+<div class="section-title">
+<small>Customer Favorites</small>
+<h2>Top Dishes</h2>
+</div>
+
+
+<div class="slider-wrap">
+
+<button class="slider-btn left-btn" onclick="slideFood('topSlider',-1)">&lsaquo;</button>
+
+
+<div class="food-slider" id="topSlider">
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0">
+<div class="food-info">
+<h3>Chicken Biryani</h3>
+<p>Traditional aromatic Pakistani biryani.</p>
+<div class="price">$16.24</div>
+</div>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0">
+<div class="food-info">
+<h3>Tikka Boti</h3>
+<p>Juicy grilled chicken tikka.</p>
+<div class="price">$17.49</div>
+</div>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2">
+<div class="food-info">
+<h3>Grilled Fish</h3>
+<p>Fresh grilled fish with delicious spices.</p>
+<div class="price">$19.99</div>
+</div>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641">
+<div class="food-info">
+<h3>White Qorma</h3>
+<p>Creamy traditional chicken white qorma.</p>
+<div class="price">$22.99</div>
+</div>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe">
+<div class="food-info">
+<h3>Nihari</h3>
+<p>Slow-cooked Pakistani beef specialty.</p>
+<div class="price">$23.74</div>
+</div>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947">
+<div class="food-info">
+<h3>BBQ Platter</h3>
+<p>A delicious selection of BBQ favorites.</p>
+<div class="price">$87.49</div>
+</div>
+</div>
+
+
+</div>
+
+<button class="slider-btn right-btn" onclick="slideFood('topSlider',1)">&rsaquo;</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= MOST LOVED ================= -->
+
+<section class="food-section" id="loved">
+
+<div class="section-title">
+<small>Our Favorites</small>
+<h2>Most Loved Meals</h2>
+</div>
+
+
+<div class="slider-wrap">
+
+<button class="slider-btn left-btn" onclick="slideFood('lovedSlider',-1)">&lsaquo;</button>
+
+
+<div class="food-slider" id="lovedSlider">
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
+<div class="food-info">
+<h3>Chicken Lahori Karahi</h3>
+<p>Classic Lahori style chicken karahi.</p>
+<div class="price">$37.36</div>
+</div>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1747518596416-2da5e5218d83?auto=format&fit=crop&w=1000&q=80">
+<div class="food-info">
+<h3>Yakhni Pulao</h3>
+<p>Aromatic rice cooked with traditional spices.</p>
+<div class="price">$14.99</div>
+</div>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0">
+<div class="food-info">
+<h3>Chicken Kabab</h3>
+<p>Freshly grilled chicken kabab.</p>
+<div class="price">$17.49</div>
+</div>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1655979284091-eea0e93405ee?auto=format&fit=crop&w=1000&q=80">
+<div class="food-info">
+<h3>Roghni Naan</h3>
+<p>Fresh soft naan with a rich traditional finish.</p>
+<div class="price">$3.13</div>
+</div>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2">
+<div class="food-info">
+<h3>Tandoori Fish</h3>
+<p>Spiced fish cooked in traditional tandoori style.</p>
+<div class="price">$19.99</div>
+</div>
+</div>
+
+
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e">
+<div class="food-info">
+<h3>Soda Drinks</h3>
+<p>Refreshing cold drinks with your meal.</p>
+<div class="price">$2.49</div>
+</div>
+</div>
+
+
+</div>
+
+
+<button class="slider-btn right-btn" onclick="slideFood('lovedSlider',1)">&rsaquo;</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= FULL MENU ================= -->
+
+<section class="menu" id="menu">
+
+<div class="section-title">
+<small>BBQ Junction</small>
+<h2>Our Full Menu</h2>
+</div>
+
+
+<!-- APPETIZERS -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>Appetizers</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Spring Rolls</h3><span class="menu-price">$11.24</span></div>
+<div class="menu-item"><h3>Fish Pakoras</h3><span class="menu-price">$13.74</span></div>
+<div class="menu-item"><h3>Fries</h3><span class="menu-price">$6.25</span></div>
+<div class="menu-item"><h3>Samosa Chaat</h3><span class="menu-price">$11.24</span></div>
+<div class="menu-item"><h3>Veg Pakoras</h3><span class="menu-price">$7.49</span></div>
+<div class="menu-item"><h3>Fish and Chips</h3><span class="menu-price">$18.74</span></div>
+<div class="menu-item"><h3>Butter Chicken Fries</h3><span class="menu-price">$17.49</span></div>
+<div class="menu-item"><h3>Gol Gappay</h3><span class="menu-price">$13.74</span></div>
+
+</div>
+</div>
+
+
+<!-- BURGERS -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>Burgers and Sandwiches</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Chicken Burger</h3><span class="menu-price">$13.74</span></div>
+<div class="menu-item"><h3>Beef Burger</h3><span class="menu-price">$13.74</span></div>
+<div class="menu-item"><h3>Zinger Burger</h3><span class="menu-price">$13.74</span></div>
+<div class="menu-item"><h3>Chicken Tikka Burger</h3><span class="menu-price">$13.74</span></div>
+
+</div>
+</div>
+
+
+<!-- KARAHI -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>Karahi Special</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Mutton Lahori Karahi</h3><span class="menu-price">$43.11</span></div>
+<div class="menu-item"><h3>Chicken Lahori Karahi</h3><span class="menu-price">$37.36</span></div>
+<div class="menu-item"><h3>Beef Shinwari Karahi</h3><span class="menu-price">$37.49</span></div>
+<div class="menu-item"><h3>Mutton Shinwari Karahi</h3><span class="menu-price">$43.11</span></div>
+<div class="menu-item"><h3>Chicken Shinwari Karahi</h3><span class="menu-price">$38.80</span></div>
+<div class="menu-item"><h3>Chicken White Karahi</h3><span class="menu-price">$38.80</span></div>
+<div class="menu-item"><h3>Mutton White Karahi</h3><span class="menu-price">$43.11</span></div>
+<div class="menu-item"><h3>Beef White Karahi</h3><span class="menu-price">$37.49</span></div>
+<div class="menu-item"><h3>Fish Karahi</h3><span class="menu-price">$33.74</span></div>
+<div class="menu-item"><h3>Beef Lahori Karahi</h3><span class="menu-price">$37.49</span></div>
+<div class="menu-item"><h3>Chicken Achari Karahi</h3><span class="menu-price">$32.49</span></div>
+<div class="menu-item"><h3>Tikka Karahi</h3><span class="menu-price">$38.80</span></div>
+
+</div>
+</div>
+
+
+<!-- BBQ SPECIAL -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>BBQ Special</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Chicken Kabab</h3><span class="menu-price">$17.49</span></div>
+<div class="menu-item"><h3>Beef Kabab</h3><span class="menu-price">$17.48</span></div>
+<div class="menu-item"><h3>Cheese Kabab</h3><span class="menu-price">$18.74</span></div>
+<div class="menu-item"><h3>Mava Kabab</h3><span class="menu-price">$18.74</span></div>
+<div class="menu-item"><h3>Almond Kabab</h3><span class="menu-price">$18.74</span></div>
+<div class="menu-item"><h3>Cheese Malai Boti</h3><span class="menu-price">$18.74</span></div>
+<div class="menu-item"><h3>Malai Boti</h3><span class="menu-price">$17.49</span></div>
+<div class="menu-item"><h3>Tikka Boti</h3><span class="menu-price">$17.49</span></div>
+<div class="menu-item"><h3>Tandoori Wings</h3><span class="menu-price">$17.49</span></div>
+<div class="menu-item"><h3>Chicken Sajji</h3><span class="menu-price">$50.00</span></div>
+<div class="menu-item"><h3>Tawa Chicken</h3><span class="menu-price">$22.99</span></div>
+<div class="menu-item"><h3>Paneer Tikka</h3><span class="menu-price">$17.49</span></div>
+<div class="menu-item"><h3>Soya Chaap Tikka</h3><span class="menu-price">$17.49</span></div>
+<div class="menu-item"><h3>Malai Soya Chaap</h3><span class="menu-price">$17.49</span></div>
+<div class="menu-item"><h3>Cheese Tikka Boti</h3><span class="menu-price">$18.74</span></div>
+<div class="menu-item"><h3>Tandoori Fish</h3><span class="menu-price">$19.99</span></div>
+
+</div>
+</div>
+
+
+<!-- RICE -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>Rice</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Chicken Biryani</h3><span class="menu-price">$16.24</span></div>
+<div class="menu-item"><h3>Plain Rice</h3><span class="menu-price">$5.63</span></div>
+<div class="menu-item"><h3>Saffron Rice</h3><span class="menu-price">$8.74</span></div>
+<div class="menu-item"><h3>Yakhni Pulao</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Tikka Pulao</h3><span class="menu-price">$17.49</span></div>
+
+</div>
+</div>
+
+
+<!-- VEGETARIAN -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>Vegetarian</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Daal Makhni</h3><span class="menu-price">$16.24</span></div>
+<div class="menu-item"><h3>Daal Tadka</h3><span class="menu-price">$16.24</span></div>
+<div class="menu-item"><h3>Daal Mash</h3><span class="menu-price">$17.49</span></div>
+<div class="menu-item"><h3>Aloo Palak</h3><span class="menu-price">$13.74</span></div>
+<div class="menu-item"><h3>Palak Paneer</h3><span class="menu-price">$16.24</span></div>
+<div class="menu-item"><h3>Chana Masala</h3><span class="menu-price">$16.88</span></div>
+
+</div>
+</div>
+
+
+<!-- BBQ PLATTERS -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>Chef's Special BBQ Platters</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>BBQ Platter</h3><span class="menu-price">$87.49</span></div>
+<div class="menu-item"><h3>Chicken Kabab Platter</h3><span class="menu-price">$19.99</span></div>
+<div class="menu-item"><h3>Beef Kabab Platter</h3><span class="menu-price">$19.99</span></div>
+<div class="menu-item"><h3>Lamb Kabab Platter</h3><span class="menu-price">$21.24</span></div>
+
+</div>
+</div>
+
+
+<!-- HANDI -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>Handi</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Nihari</h3><span class="menu-price">$23.74</span></div>
+<div class="menu-item"><h3>White Qorma</h3><span class="menu-price">$22.99</span></div>
+
+</div>
+</div>
+
+
+<!-- BREADS -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>Breads</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Chicken Naan Bread</h3><span class="menu-price">$9.99</span></div>
+<div class="menu-item"><h3>Beef Naan Bread</h3><span class="menu-price">$9.99</span></div>
+<div class="menu-item"><h3>Cheese Naan Bread</h3><span class="menu-price">$7.49</span></div>
+<div class="menu-item"><h3>Roghni Naan</h3><span class="menu-price">$3.13</span></div>
+<div class="menu-item"><h3>Plain Naan Bread</h3><span class="menu-price">$2.49</span></div>
+<div class="menu-item"><h3>Sesame Naan Bread</h3><span class="menu-price">$3.13</span></div>
+<div class="menu-item"><h3>Butter Naan Bread</h3><span class="menu-price">$3.13</span></div>
+<div class="menu-item"><h3>Garlic Naan Bread</h3><span class="menu-price">$4.38</span></div>
+<div class="menu-item"><h3>Tandoori Roti</h3><span class="menu-price">$1.88</span></div>
+<div class="menu-item"><h3>Lacha Paratha</h3><span class="menu-price">$4.99</span></div>
+
+</div>
+</div>
+
+
+<!-- SIDES -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>Sides</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Mint Sauce</h3><span class="menu-price">$2.38</span></div>
+<div class="menu-item"><h3>Tamarind Sauce</h3><span class="menu-price">$2.38</span></div>
+<div class="menu-item"><h3>Pickles</h3><span class="menu-price">$2.38</span></div>
+<div class="menu-item"><h3>Masala Onion</h3><span class="menu-price">$3.63</span></div>
+<div class="menu-item"><h3>Papad</h3><span class="menu-price">$2.38</span></div>
+<div class="menu-item"><h3>Bondi Raita</h3><span class="menu-price">$3.74</span></div>
+<div class="menu-item"><h3>Garlic Mayo</h3><span class="menu-price">$2.49</span></div>
+
+</div>
+</div>
+
+
+<!-- BEVERAGES -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+<h2>Beverages</h2>
+<span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Coke</h3><span class="menu-price">$2.49</span></div>
+<div class="menu-item"><h3>Diet Coke</h3><span class="menu-price">$2.49</span></div>
+<div class="menu-item"><h3>Sprite</h3><span class="menu-price">$2.49</span></div>
+<div class="menu-item"><h3>Crush Orange</h3><span class="menu-price">$2.49</span></div>
+<div class="menu-item"><h3>Salted Lassi</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Sweet Lassi</h3><span class="menu-price">$6.24</span></div>
+<div class="menu-item"><h3>Mango Lassi</h3><span class="menu-price">$6.24</span></div>
+<div class="menu-item"><h3>Kadak Chai</h3><span class="menu-price">$3.74</span></div>
+<div class="menu-item"><h3>Cardamom Tea</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Ginger Tea</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Saffron Tea</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Green Tea</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Masala Chai</h3><span class="menu-price">$4.99</span></div>
+
+</div>
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about">
+
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947"
+alt="BBQ Food">
+
+
+<div class="about-text">
+
+<small>WELCOME TO BBQ JUNCTION</small>
+
+<h2>Authentic Taste. Fresh Food. Halal.</h2>
+
+<p>
+BBQ Junction Saskatoon brings together delicious Pakistani, Indian and Halal
+cuisine. From aromatic biryani and yakhni pulao to juicy tikka, BBQ platters,
+karahi and fresh naan, every meal is prepared with traditional flavors.
+</p>
+
+<div class="about-list">
+<span class="tick">&#10003;</span> Pakistani Cuisine<br>
+<span class="tick">&#10003;</span> Indian Cuisine<br>
+<span class="tick">&#10003;</span> Halal Food<br>
+<span class="tick">&#10003;</span> Fresh BBQ<br>
+<span class="tick">&#10003;</span> Family Friendly Dining
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= LOCATION ================= -->
+
+<section class="location" id="location">
+
+<div class="section-title">
+<small>Visit Us</small>
+<h2>Our Location</h2>
+</div>
+
+
+<div class="location-box">
+
+
+<div class="location-info">
+
+<h2>BBQ Junction Saskatoon</h2>
+
+<p>
+<b>Address:</b><br>
+250 3 Ave S, Saskatoon, SK S7K 0A7, Canada
+</p>
+
+<p>
+<b>Phone:</b><br>
++1 306 974 2455
+</p>
+
+<p>
+Come and enjoy authentic Pakistani, Indian and Halal food with family and
+friends.
+</p>
+
+<a href="https://www.google.com/maps/search/?api=1&query=250+3+Ave+S+Saskatoon+SK+S7K+0A7"
+class="btn btn-main"
+target="_blank">
+
+Open in Google Maps
+
+</a>
+
+</div>
+
+
+<div class="map">
+
+<iframe
+src="https://www.google.com/maps?q=250%203%20Ave%20S%2C%20Saskatoon%2C%20SK%20S7K%200A7&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+<div class="footer-grid">
+
+
+<div class="footer-col footer-logo">
+
+<img src="https://cdn3.didevelop.com/public/logos/0dfd5d08261d8c99a3fb8666cb10efd9.png"
+alt="BBQ Junction Logo">
+
+<p>
+BBQ Junction Saskatoon — Pakistani, Indian and Halal cuisine.
+</p>
+
+</div>
+
+
+<div class="footer-col">
+
+<h3>Quick Links</h3>
+
+<a href="#home">Home</a>
+<a href="#offers">Offers</a>
+<a href="#menu">Menu</a>
+<a href="#top-dishes">Top Dishes</a>
+<a href="#loved">Most Loved</a>
+
+</div>
+
+
+<div class="footer-col">
+
+<h3>Contact</h3>
+
+<p>250 3 Ave S</p>
+<p>Saskatoon, SK S7K 0A7</p>
+<p>Canada</p>
+<p>+1 306 974 2455</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+© 2026 BBQ Junction Saskatoon. All Rights Reserved.
+</div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* ================= HERO SLIDER ================= */
+
+let heroIndex = 0;
+
+let heroSlides =
+document.querySelectorAll(".hero-slide");
+
+let heroDots =
+document.querySelectorAll(".hero-dot");
+
+let heroTimer;
+
+
+function showHero(index){
+
+    heroIndex = index;
+
+    if(heroIndex >= heroSlides.length){
+        heroIndex = 0;
+    }
+
+    if(heroIndex < 0){
+        heroIndex = heroSlides.length - 1;
+    }
+
+    heroSlides.forEach(function(slide){
+        slide.classList.remove("active");
+    });
+
+    heroDots.forEach(function(dot){
+        dot.classList.remove("active");
+    });
+
+    heroSlides[heroIndex].classList.add("active");
+
+    heroDots[heroIndex].classList.add("active");
+
+}
+
+
+function changeHero(direction){
+
+    showHero(heroIndex + direction);
+
+    restartHero();
+
+}
+
+
+function goHero(index){
+
+    showHero(index);
+
+    restartHero();
+
+}
+
+
+function startHero(){
+
+    clearInterval(heroTimer);
+
+    heroTimer = setInterval(function(){
+
+        showHero(heroIndex + 1);
+
+    },5000);
+
+}
+
+
+function restartHero(){
+
+    clearInterval(heroTimer);
+
+    startHero();
+
+}
+
+
+document.querySelector(".hero").addEventListener("mouseenter",function(){
+
+    clearInterval(heroTimer);
+
+});
+
+
+document.querySelector(".hero").addEventListener("mouseleave",function(){
+
+    startHero();
+
+});
+
+
+startHero();
+
+
+
+/* ================= FOOD SLIDERS ================= */
+
+function slideFood(id,direction){
+
+    let slider =
+    document.getElementById(id);
+
+    slider.scrollBy({
+
+        left:direction * 300,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+
+/* ================= AUTOMATIC FOOD SLIDING ================= */
+
+function autoFoodSlider(id){
+
+    let slider =
+    document.getElementById(id);
+
+    let timer;
+
+
+    function start(){
+
+        clearInterval(timer);
+
+        timer = setInterval(function(){
+
+            let maxScroll =
+            slider.scrollWidth - slider.clientWidth;
+
+
+            if(slider.scrollLeft >= maxScroll - 10){
+
+                slider.scrollTo({
+
+                    left:0,
+
+                    behavior:"smooth"
+
+                });
+
+            }
+
+            else{
+
+                slider.scrollBy({
+
+                    left:292,
+
+                    behavior:"smooth"
+
+                });
+
+            }
+
+        },3500);
+
+    }
+
+
+    slider.addEventListener("mouseenter",function(){
+
+        clearInterval(timer);
+
+    });
+
+
+    slider.addEventListener("mouseleave",function(){
+
+        start();
+
+    });
+
+
+    start();
+
+}
+
+
+autoFoodSlider("topSlider");
+
+autoFoodSlider("lovedSlider");
+
+
+</script>
+
+</body>
+</html>
