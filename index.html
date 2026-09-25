@@ -791,6 +791,224 @@ footer{
     }
 }
 
+.order-section{
+    padding:80px 20px;
+    background:#111;
+}
+
+.order-box{
+    max-width:900px;
+    margin:30px auto 0;
+    display:grid;
+    gap:15px;
+}
+
+.order-item{
+    background:#1b1b1b;
+    padding:20px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.order-item h3{
+    margin:0;
+    font-size:18px;
+}
+
+.order-item span{
+    color:#f7a900;
+    font-weight:bold;
+}
+
+.order-item input{
+    width:70px;
+    padding:10px;
+    border:1px solid #555;
+    border-radius:6px;
+    background:#fff;
+    color:#111;
+    text-align:center;
+}
+
+.order-total{
+    margin-top:20px;
+    padding:25px;
+    background:#1b1b1b;
+    border-radius:10px;
+    text-align:center;
+}
+
+.order-total h3{
+    margin-bottom:20px;
+    color:#fff;
+}
+
+.order-total h3 span{
+    color:#f7a900;
+}
+
+.order-total button{
+    background:#f7a900;
+    color:#111;
+    border:none;
+    padding:13px 30px;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.selectable-item{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.selectable-item:hover{
+    border-bottom:3px solid #f7a900;
+}
+
+.selectable-item.selected{
+    border-bottom:3px solid #f7a900;
+    box-shadow:0 3px 10px rgba(247,169,0,0.25);
+}
+.order-cart{
+    max-width:900px;
+    margin:50px auto;
+    padding:30px;
+    background:#111;
+    border:1px solid #333;
+    border-radius:12px;
+}
+
+.order-cart h2{
+    color:#f7a900;
+    margin-bottom:20px;
+}
+
+#selectedItems p{
+    color:#ccc;
+}
+
+.cart-total{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid #444;
+    color:#fff;
+    font-size:20px;
+}
+
+.cart-total span{
+    color:#f7a900;
+}
+
+.order-cart button{
+    margin-top:20px;
+    padding:13px 30px;
+    background:#f7a900;
+    color:#111;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.order-form{
+    max-width:900px;
+    margin:40px auto;
+    padding:30px;
+    background:#111;
+    border:1px solid #333;
+    border-radius:12px;
+}
+
+.order-form h2{
+    color:#f7a900;
+    margin-bottom:25px;
+}
+
+.order-form label{
+    display:block;
+    color:#fff;
+    margin-top:15px;
+    margin-bottom:8px;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea{
+    width:100%;
+    padding:12px;
+    box-sizing:border-box;
+    background:#222;
+    color:#fff;
+    border:1px solid #444;
+    border-radius:6px;
+}
+
+.order-form textarea{
+    height:100px;
+    resize:vertical;
+}
+
+.order-form button{
+    margin-top:20px;
+    padding:13px 30px;
+    background:#f7a900;
+    color:#111;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.reservation-form{
+    max-width:900px;
+    margin:50px auto;
+    padding:30px;
+    background:#111;
+    border:1px solid #333;
+    border-radius:12px;
+}
+
+.reservation-form h2{
+    color:#f7a900;
+    margin-bottom:25px;
+}
+
+.reservation-form label{
+    display:block;
+    color:#fff;
+    margin-top:15px;
+    margin-bottom:8px;
+}
+
+.reservation-form input,
+.reservation-form textarea{
+    width:100%;
+    padding:12px;
+    box-sizing:border-box;
+    background:#222;
+    color:#fff;
+    border:1px solid #444;
+    border-radius:6px;
+}
+
+.reservation-form textarea{
+    height:100px;
+    resize:vertical;
+}
+
+.reservation-form button{
+    margin-top:20px;
+    padding:13px 30px;
+    background:#f7a900;
+    color:#111;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
 </style>
 </head>
 
@@ -815,7 +1033,8 @@ footer{
     <a href="#loved">Most Loved</a>
     <a href="#location">Location</a>
     <a href="#contact">Contact</a>
-    <a class="order-btn" href="#menu">Order Online</a>
+    <a class="order-btn" href="#orderCart">Order Online</a>
+<a class="order-btn" href="#reservation">Online Reservation</a>
 </nav>
 
 </header>
@@ -962,8 +1181,8 @@ alt="Soda Drinks">
 
 </div>
 
-
 <div class="hero-dots">
+
 
 <span class="hero-dot active" onclick="goHero(0)"></span>
 <span class="hero-dot" onclick="goHero(1)"></span>
@@ -973,6 +1192,7 @@ alt="Soda Drinks">
 </div>
 
 </section>
+
 
 
 <!-- ================= OFFERS ================= -->
@@ -1069,74 +1289,65 @@ style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694
 <h2>Top Dishes</h2>
 </div>
 
-
 <div class="slider-wrap">
 
 <button class="slider-btn left-btn" onclick="slideFood('topSlider',-1)">&lsaquo;</button>
 
-
 <div class="food-slider" id="topSlider">
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0">
 <div class="food-info">
 <h3>Chicken Biryani</h3>
 <p>Traditional aromatic Pakistani biryani.</p>
-<div class="price">$16.24</div>
+<div class="price">$12.99</div>
 </div>
 </div>
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0">
 <div class="food-info">
 <h3>Tikka Boti</h3>
 <p>Juicy grilled chicken tikka.</p>
-<div class="price">$17.49</div>
+<div class="price">$14.99</div>
 </div>
 </div>
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2">
 <div class="food-info">
-<h3>Grilled Fish</h3>
-<p>Fresh grilled fish with delicious spices.</p>
-<div class="price">$19.99</div>
+<h3>Tandoori Fish</h3>
+<p>Spiced fish cooked in traditional tandoori style.</p>
+<div class="price">$16.99</div>
 </div>
 </div>
-
 
 <div class="food-card">
-<img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641">
+<img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
 <div class="food-info">
-<h3>White Qorma</h3>
-<p>Creamy traditional chicken white qorma.</p>
-<div class="price">$22.99</div>
+<h3>White Karahi</h3>
+<p>Creamy traditional chicken white karahi.</p>
+<div class="price">Half $29.99 | Full $54.99</div>
 </div>
 </div>
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe">
 <div class="food-info">
 <h3>Nihari</h3>
-<p>Slow-cooked Pakistani beef specialty.</p>
-<div class="price">$23.74</div>
+<p>Slow-cooked Pakistani specialty.</p>
+<div class="price">$18.99</div>
 </div>
 </div>
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1544025162-d76694265947">
 <div class="food-info">
-<h3>BBQ Platter</h3>
+<h3>2-Person BBQ Platter</h3>
 <p>A delicious selection of BBQ favorites.</p>
-<div class="price">$87.49</div>
+<div class="price">$39.99</div>
 </div>
 </div>
-
 
 </div>
 
@@ -1145,7 +1356,6 @@ style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694
 </div>
 
 </section>
-
 
 <!-- ================= MOST LOVED ================= -->
 
@@ -1156,77 +1366,67 @@ style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694
 <h2>Most Loved Meals</h2>
 </div>
 
-
 <div class="slider-wrap">
 
 <button class="slider-btn left-btn" onclick="slideFood('lovedSlider',-1)">&lsaquo;</button>
 
-
 <div class="food-slider" id="lovedSlider">
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
 <div class="food-info">
 <h3>Chicken Lahori Karahi</h3>
 <p>Classic Lahori style chicken karahi.</p>
-<div class="price">$37.36</div>
+<div class="price">Half $29.99 | Full $54.99</div>
 </div>
 </div>
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1747518596416-2da5e5218d83?auto=format&fit=crop&w=1000&q=80">
 <div class="food-info">
 <h3>Yakhni Pulao</h3>
 <p>Aromatic rice cooked with traditional spices.</p>
-<div class="price">$14.99</div>
+<div class="price">$12.99</div>
 </div>
 </div>
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0">
 <div class="food-info">
 <h3>Chicken Kabab</h3>
 <p>Freshly grilled chicken kabab.</p>
-<div class="price">$17.49</div>
+<div class="price">$14.99</div>
 </div>
 </div>
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1655979284091-eea0e93405ee?auto=format&fit=crop&w=1000&q=80">
 <div class="food-info">
-<h3>Roghni Naan</h3>
+<h3>Roghani Naan</h3>
 <p>Fresh soft naan with a rich traditional finish.</p>
-<div class="price">$3.13</div>
+<div class="price">$2.99</div>
 </div>
 </div>
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2">
 <div class="food-info">
 <h3>Tandoori Fish</h3>
 <p>Spiced fish cooked in traditional tandoori style.</p>
-<div class="price">$19.99</div>
+<div class="price">$16.99</div>
 </div>
 </div>
-
 
 <div class="food-card">
 <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e">
 <div class="food-info">
 <h3>Soda Drinks</h3>
 <p>Refreshing cold drinks with your meal.</p>
-<div class="price">$2.49</div>
+<div class="price">$1.99</div>
 </div>
 </div>
 
-
 </div>
-
 
 <button class="slider-btn right-btn" onclick="slideFood('lovedSlider',1)">&rsaquo;</button>
 
@@ -1234,14 +1434,13 @@ style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694
 
 </section>
 
-
 <!-- ================= FULL MENU ================= -->
 
 <section class="menu" id="menu">
 
 <div class="section-title">
-<small>BBQ Junction</small>
-<h2>Our Full Menu</h2>
+    <small>BBQ Junction</small>
+    <h2>Our Full Menu</h2>
 </div>
 
 
@@ -1250,121 +1449,61 @@ style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694
 <div class="menu-category">
 
 <div class="menu-category-title">
-<h2>Appetizers</h2>
-<span></span>
+    <h2>Appetizers</h2>
+    <span></span>
 </div>
 
 <div class="menu-grid">
 
-<div class="menu-item"><h3>Spring Rolls</h3><span class="menu-price">$11.24</span></div>
-<div class="menu-item"><h3>Fish Pakoras</h3><span class="menu-price">$13.74</span></div>
-<div class="menu-item"><h3>Fries</h3><span class="menu-price">$6.25</span></div>
-<div class="menu-item"><h3>Samosa Chaat</h3><span class="menu-price">$11.24</span></div>
-<div class="menu-item"><h3>Veg Pakoras</h3><span class="menu-price">$7.49</span></div>
-<div class="menu-item"><h3>Fish and Chips</h3><span class="menu-price">$18.74</span></div>
-<div class="menu-item"><h3>Butter Chicken Fries</h3><span class="menu-price">$17.49</span></div>
-<div class="menu-item"><h3>Gol Gappay</h3><span class="menu-price">$13.74</span></div>
+<div class="menu-item selectable-item">
+<h3>Spring Rolls</h3>
+<span class="menu-price">$10.99</span>
+</div>
+<div class="menu-item"><h3>Fish Pakora</h3><span class="menu-price">$12.99</span></div>
+<div class="menu-item"><h3>Fries</h3><span class="menu-price">$6.99</span></div>
+<div class="menu-item"><h3>Samosa Chaat</h3><span class="menu-price">$11.99</span></div>
+<div class="menu-item"><h3>Veg Pakora</h3><span class="menu-price">$8.99</span></div>
+<div class="menu-item"><h3>Fish n Chips</h3><span class="menu-price">$15.99</span></div>
+<div class="menu-item"><h3>Gol Gappay</h3><span class="menu-price">$10.99</span></div>
+<div class="menu-item"><h3>Butter Chicken Fries</h3><span class="menu-price">$13.99</span></div>
+<div class="menu-item"><h3>Cream of Chicken Soup (per person)</h3><span class="menu-price">$9.99</span></div>
+<div class="menu-item"><h3>Chef's Special Soup</h3><span class="menu-price">$9.99</span></div>
+<div class="menu-item"><h3>Fish Crackers</h3><span class="menu-price">$4.99</span></div>
 
 </div>
 </div>
 
 
-<!-- BURGERS -->
+<!-- ROLLS -->
 
 <div class="menu-category">
 
 <div class="menu-category-title">
-<h2>Burgers and Sandwiches</h2>
-<span></span>
+    <h2>Rolls (Paratha / Naan)</h2>
+    <span></span>
 </div>
 
 <div class="menu-grid">
 
-<div class="menu-item"><h3>Chicken Burger</h3><span class="menu-price">$13.74</span></div>
-<div class="menu-item"><h3>Beef Burger</h3><span class="menu-price">$13.74</span></div>
-<div class="menu-item"><h3>Zinger Burger</h3><span class="menu-price">$13.74</span></div>
-<div class="menu-item"><h3>Chicken Tikka Burger</h3><span class="menu-price">$13.74</span></div>
-
-</div>
+<div class="menu-item">
+<h3>Chicken Tikka Roll</h3>
+<span class="menu-price">Paratha $8.99 | Naan $11.99</span>
 </div>
 
-
-<!-- KARAHI -->
-
-<div class="menu-category">
-
-<div class="menu-category-title">
-<h2>Karahi Special</h2>
-<span></span>
+<div class="menu-item">
+<h3>Chicken Kabab Roll</h3>
+<span class="menu-price">Paratha $8.99 | Naan $11.99</span>
 </div>
 
-<div class="menu-grid">
-
-<div class="menu-item"><h3>Mutton Lahori Karahi</h3><span class="menu-price">$43.11</span></div>
-<div class="menu-item"><h3>Chicken Lahori Karahi</h3><span class="menu-price">$37.36</span></div>
-<div class="menu-item"><h3>Beef Shinwari Karahi</h3><span class="menu-price">$37.49</span></div>
-<div class="menu-item"><h3>Mutton Shinwari Karahi</h3><span class="menu-price">$43.11</span></div>
-<div class="menu-item"><h3>Chicken Shinwari Karahi</h3><span class="menu-price">$38.80</span></div>
-<div class="menu-item"><h3>Chicken White Karahi</h3><span class="menu-price">$38.80</span></div>
-<div class="menu-item"><h3>Mutton White Karahi</h3><span class="menu-price">$43.11</span></div>
-<div class="menu-item"><h3>Beef White Karahi</h3><span class="menu-price">$37.49</span></div>
-<div class="menu-item"><h3>Fish Karahi</h3><span class="menu-price">$33.74</span></div>
-<div class="menu-item"><h3>Beef Lahori Karahi</h3><span class="menu-price">$37.49</span></div>
-<div class="menu-item"><h3>Chicken Achari Karahi</h3><span class="menu-price">$32.49</span></div>
-<div class="menu-item"><h3>Tikka Karahi</h3><span class="menu-price">$38.80</span></div>
-
-</div>
+<div class="menu-item">
+<h3>Chicken Malai Boti Roll</h3>
+<span class="menu-price">Paratha $8.99 | Naan $11.99</span>
 </div>
 
-
-<!-- BBQ SPECIAL -->
-
-<div class="menu-category">
-
-<div class="menu-category-title">
-<h2>BBQ Special</h2>
-<span></span>
+<div class="menu-item">
+<h3>Paneer Tikka Roll</h3>
+<span class="menu-price">Paratha $8.99 | Naan $11.99</span>
 </div>
-
-<div class="menu-grid">
-
-<div class="menu-item"><h3>Chicken Kabab</h3><span class="menu-price">$17.49</span></div>
-<div class="menu-item"><h3>Beef Kabab</h3><span class="menu-price">$17.48</span></div>
-<div class="menu-item"><h3>Cheese Kabab</h3><span class="menu-price">$18.74</span></div>
-<div class="menu-item"><h3>Mava Kabab</h3><span class="menu-price">$18.74</span></div>
-<div class="menu-item"><h3>Almond Kabab</h3><span class="menu-price">$18.74</span></div>
-<div class="menu-item"><h3>Cheese Malai Boti</h3><span class="menu-price">$18.74</span></div>
-<div class="menu-item"><h3>Malai Boti</h3><span class="menu-price">$17.49</span></div>
-<div class="menu-item"><h3>Tikka Boti</h3><span class="menu-price">$17.49</span></div>
-<div class="menu-item"><h3>Tandoori Wings</h3><span class="menu-price">$17.49</span></div>
-<div class="menu-item"><h3>Chicken Sajji</h3><span class="menu-price">$50.00</span></div>
-<div class="menu-item"><h3>Tawa Chicken</h3><span class="menu-price">$22.99</span></div>
-<div class="menu-item"><h3>Paneer Tikka</h3><span class="menu-price">$17.49</span></div>
-<div class="menu-item"><h3>Soya Chaap Tikka</h3><span class="menu-price">$17.49</span></div>
-<div class="menu-item"><h3>Malai Soya Chaap</h3><span class="menu-price">$17.49</span></div>
-<div class="menu-item"><h3>Cheese Tikka Boti</h3><span class="menu-price">$18.74</span></div>
-<div class="menu-item"><h3>Tandoori Fish</h3><span class="menu-price">$19.99</span></div>
-
-</div>
-</div>
-
-
-<!-- RICE -->
-
-<div class="menu-category">
-
-<div class="menu-category-title">
-<h2>Rice</h2>
-<span></span>
-</div>
-
-<div class="menu-grid">
-
-<div class="menu-item"><h3>Chicken Biryani</h3><span class="menu-price">$16.24</span></div>
-<div class="menu-item"><h3>Plain Rice</h3><span class="menu-price">$5.63</span></div>
-<div class="menu-item"><h3>Saffron Rice</h3><span class="menu-price">$8.74</span></div>
-<div class="menu-item"><h3>Yakhni Pulao</h3><span class="menu-price">$14.99</span></div>
-<div class="menu-item"><h3>Tikka Pulao</h3><span class="menu-price">$17.49</span></div>
 
 </div>
 </div>
@@ -1375,56 +1514,16 @@ style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694
 <div class="menu-category">
 
 <div class="menu-category-title">
-<h2>Vegetarian</h2>
-<span></span>
+    <h2>Vegetarian</h2>
+    <span></span>
 </div>
 
 <div class="menu-grid">
 
-<div class="menu-item"><h3>Daal Makhni</h3><span class="menu-price">$16.24</span></div>
-<div class="menu-item"><h3>Daal Tadka</h3><span class="menu-price">$16.24</span></div>
-<div class="menu-item"><h3>Daal Mash</h3><span class="menu-price">$17.49</span></div>
-<div class="menu-item"><h3>Aloo Palak</h3><span class="menu-price">$13.74</span></div>
-<div class="menu-item"><h3>Palak Paneer</h3><span class="menu-price">$16.24</span></div>
-<div class="menu-item"><h3>Chana Masala</h3><span class="menu-price">$16.88</span></div>
-
-</div>
-</div>
-
-
-<!-- BBQ PLATTERS -->
-
-<div class="menu-category">
-
-<div class="menu-category-title">
-<h2>Chef's Special BBQ Platters</h2>
-<span></span>
-</div>
-
-<div class="menu-grid">
-
-<div class="menu-item"><h3>BBQ Platter</h3><span class="menu-price">$87.49</span></div>
-<div class="menu-item"><h3>Chicken Kabab Platter</h3><span class="menu-price">$19.99</span></div>
-<div class="menu-item"><h3>Beef Kabab Platter</h3><span class="menu-price">$19.99</span></div>
-<div class="menu-item"><h3>Lamb Kabab Platter</h3><span class="menu-price">$21.24</span></div>
-
-</div>
-</div>
-
-
-<!-- HANDI -->
-
-<div class="menu-category">
-
-<div class="menu-category-title">
-<h2>Handi</h2>
-<span></span>
-</div>
-
-<div class="menu-grid">
-
-<div class="menu-item"><h3>Nihari</h3><span class="menu-price">$23.74</span></div>
-<div class="menu-item"><h3>White Qorma</h3><span class="menu-price">$22.99</span></div>
+<div class="menu-item"><h3>Daal Tadka</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Daal Mash</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Palak Paneer</h3><span class="menu-price">$12.99</span></div>
+<div class="menu-item"><h3>Channa Masala</h3><span class="menu-price">$13.99</span></div>
 
 </div>
 </div>
@@ -1435,22 +1534,134 @@ style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694
 <div class="menu-category">
 
 <div class="menu-category-title">
-<h2>Breads</h2>
-<span></span>
+    <h2>Breads</h2>
+    <span></span>
 </div>
 
 <div class="menu-grid">
 
-<div class="menu-item"><h3>Chicken Naan Bread</h3><span class="menu-price">$9.99</span></div>
-<div class="menu-item"><h3>Beef Naan Bread</h3><span class="menu-price">$9.99</span></div>
-<div class="menu-item"><h3>Cheese Naan Bread</h3><span class="menu-price">$7.49</span></div>
-<div class="menu-item"><h3>Roghni Naan</h3><span class="menu-price">$3.13</span></div>
-<div class="menu-item"><h3>Plain Naan Bread</h3><span class="menu-price">$2.49</span></div>
-<div class="menu-item"><h3>Sesame Naan Bread</h3><span class="menu-price">$3.13</span></div>
-<div class="menu-item"><h3>Butter Naan Bread</h3><span class="menu-price">$3.13</span></div>
-<div class="menu-item"><h3>Garlic Naan Bread</h3><span class="menu-price">$4.38</span></div>
-<div class="menu-item"><h3>Tandoori Roti</h3><span class="menu-price">$1.88</span></div>
-<div class="menu-item"><h3>Lacha Paratha</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Beef Naan Bread</h3><span class="menu-price">$8.99</span></div>
+<div class="menu-item"><h3>Cheese Naan Bread</h3><span class="menu-price">$7.99</span></div>
+<div class="menu-item"><h3>Nutella Naan</h3><span class="menu-price">$7.99</span></div>
+<div class="menu-item"><h3>Plain Naan</h3><span class="menu-price">$2.50</span></div>
+<div class="menu-item"><h3>Sesame Naan</h3><span class="menu-price">$2.99</span></div>
+<div class="menu-item"><h3>Garlic Naan</h3><span class="menu-price">$3.50</span></div>
+<div class="menu-item"><h3>Tandoori Roti</h3><span class="menu-price">$3.50</span></div>
+<div class="menu-item"><h3>Tandoori Lachha Paratha</h3><span class="menu-price">$3.50</span></div>
+<div class="menu-item"><h3>Chicken Tikka Naan</h3><span class="menu-price">$8.99</span></div>
+<div class="menu-item"><h3>Kalongi Naan</h3><span class="menu-price">$2.99</span></div>
+<div class="menu-item"><h3>Roghani Naan</h3><span class="menu-price">$2.99</span></div>
+
+</div>
+</div>
+
+
+<!-- BURGERS & SANDWICHES -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+    <h2>Burgers & Sandwiches</h2>
+    <span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Chicken Burger</h3><span class="menu-price">$12.99</span></div>
+<div class="menu-item"><h3>Smash Burger</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Zinger Burger</h3><span class="menu-price">$12.99</span></div>
+<div class="menu-item"><h3>Chicken Tikka Burger</h3><span class="menu-price">$12.99</span></div>
+<div class="menu-item"><h3>Fish Tikka Burger</h3><span class="menu-price">$12.99</span></div>
+<div class="menu-item"><h3>Chicken Tikka Sandwich</h3><span class="menu-price">$12.99</span></div>
+<div class="menu-item"><h3>Chicken Steak Burger</h3><span class="menu-price">$15.99</span></div>
+
+</div>
+</div>
+
+
+<!-- RICE -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+    <h2>Rice</h2>
+    <span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item">
+<h3>Chicken Biryani</h3>
+<span class="menu-price">$12.99</span>
+</div>
+<div class="menu-item">
+<h3>Plain Rice</h3>
+<span class="menu-price">$7.99</span>
+</div>
+<div class="menu-item"><h3>Saffron Rice</h3><span class="menu-price">$8.99</span></div>
+<div class="menu-item"><h3>Yakhni Pulao</h3><span class="menu-price">$12.99</span></div>
+<div class="menu-item"><h3>Mutton Pulao</h3><span class="menu-price">$16.99</span></div>
+<div class="menu-item"><h3>Parda Biryani (2-3 People)</h3><span class="menu-price">$24.99</span></div>
+<div class="menu-item"><h3>Yakhni Pulao (Without Chicken)</h3><span class="menu-price">$9.99</span></div>
+
+</div>
+</div>
+
+
+<!-- BBQ -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+    <h2>BBQ</h2>
+    <span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Chicken Kabab</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Beef Kabab</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Cheese Kabab</h3><span class="menu-price">$15.99</span></div>
+<div class="menu-item"><h3>Rashimi Kabab</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Mawa Kabab</h3><span class="menu-price">$16.99</span></div>
+<div class="menu-item"><h3>Almond Kabab</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Saffron Kabab</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Malai Boti</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Tikka Boti</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Cheese Malai Boti</h3><span class="menu-price">$16.99</span></div>
+<div class="menu-item"><h3>Cheese Tikka Boti</h3><span class="menu-price">$16.99</span></div>
+<div class="menu-item"><h3>Tandoori Wings</h3><span class="menu-price">$14.99</span></div>
+<div class="menu-item"><h3>Tandoori Fish</h3><span class="menu-price">$16.99</span></div>
+<div class="menu-item"><h3>Chicken Sajji with Rice - Half</h3><span class="menu-price">$29.99</span></div>
+<div class="menu-item"><h3>Chicken Sajji with Rice - Full</h3><span class="menu-price">$39.99</span></div>
+<div class="menu-item"><h3>Tawa Chicken</h3><span class="menu-price">$22.99</span></div>
+<div class="menu-item"><h3>Paneer Tikka</h3><span class="menu-price">$15.99</span></div>
+<div class="menu-item"><h3>Chicken Leg</h3><span class="menu-price">$15.99</span></div>
+
+</div>
+</div>
+
+
+<!-- CHEF'S SPECIAL BBQ PLATTER -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+    <h2>Chef's Special BBQ Platter</h2>
+    <span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>2-Person Platter</h3><span class="menu-price">$39.99</span></div>
+<div class="menu-item"><h3>4-Person Platter</h3><span class="menu-price">$69.99</span></div>
+<div class="menu-item"><h3>6-Person Platter</h3><span class="menu-price">$105.00</span></div>
+<div class="menu-item"><h3>8-Person Platter</h3><span class="menu-price">$134.99</span></div>
+<div class="menu-item"><h3>Chicken Kabab Platter (Rice or Naan)</h3><span class="menu-price">$17.99</span></div>
+<div class="menu-item"><h3>Beef Kabab Platter (Rice or Naan)</h3><span class="menu-price">$17.99</span></div>
+<div class="menu-item"><h3>Malai Boti Platter (Rice or Naan)</h3><span class="menu-price">$17.99</span></div>
+<div class="menu-item"><h3>Chicken Tikka Platter (Rice or Naan)</h3><span class="menu-price">$17.99</span></div>
+<div class="menu-item"><h3>Chicken Leg Platter (Rice or Naan)</h3><span class="menu-price">$22.99</span></div>
 
 </div>
 </div>
@@ -1461,55 +1672,222 @@ style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694
 <div class="menu-category">
 
 <div class="menu-category-title">
-<h2>Sides</h2>
-<span></span>
+    <h2>Sides</h2>
+    <span></span>
 </div>
 
 <div class="menu-grid">
 
-<div class="menu-item"><h3>Mint Sauce</h3><span class="menu-price">$2.38</span></div>
-<div class="menu-item"><h3>Tamarind Sauce</h3><span class="menu-price">$2.38</span></div>
-<div class="menu-item"><h3>Pickles</h3><span class="menu-price">$2.38</span></div>
-<div class="menu-item"><h3>Masala Onion</h3><span class="menu-price">$3.63</span></div>
-<div class="menu-item"><h3>Papad</h3><span class="menu-price">$2.38</span></div>
-<div class="menu-item"><h3>Bondi Raita</h3><span class="menu-price">$3.74</span></div>
-<div class="menu-item"><h3>Garlic Mayo</h3><span class="menu-price">$2.49</span></div>
+<div class="menu-item"><h3>Mint Sauce</h3><span class="menu-price">$1.99</span></div>
+<div class="menu-item"><h3>Tamarind Sauce</h3><span class="menu-price">$1.99</span></div>
+<div class="menu-item"><h3>Garlic Mayo</h3><span class="menu-price">$1.99</span></div>
+<div class="menu-item"><h3>Pickles</h3><span class="menu-price">$1.99</span></div>
+<div class="menu-item"><h3>Masala Onion</h3><span class="menu-price">$2.99</span></div>
+<div class="menu-item"><h3>Bondi Raita</h3><span class="menu-price">$4.99</span></div>
 
 </div>
 </div>
 
 
-<!-- BEVERAGES -->
+<!-- KARAHIS -->
 
 <div class="menu-category">
 
 <div class="menu-category-title">
-<h2>Beverages</h2>
-<span></span>
+    <h2>Karahis</h2>
+    <span></span>
 </div>
 
 <div class="menu-grid">
 
-<div class="menu-item"><h3>Coke</h3><span class="menu-price">$2.49</span></div>
-<div class="menu-item"><h3>Diet Coke</h3><span class="menu-price">$2.49</span></div>
-<div class="menu-item"><h3>Sprite</h3><span class="menu-price">$2.49</span></div>
-<div class="menu-item"><h3>Crush Orange</h3><span class="menu-price">$2.49</span></div>
-<div class="menu-item"><h3>Salted Lassi</h3><span class="menu-price">$4.99</span></div>
-<div class="menu-item"><h3>Sweet Lassi</h3><span class="menu-price">$6.24</span></div>
-<div class="menu-item"><h3>Mango Lassi</h3><span class="menu-price">$6.24</span></div>
-<div class="menu-item"><h3>Kadak Chai</h3><span class="menu-price">$3.74</span></div>
-<div class="menu-item"><h3>Cardamom Tea</h3><span class="menu-price">$4.99</span></div>
-<div class="menu-item"><h3>Ginger Tea</h3><span class="menu-price">$4.99</span></div>
-<div class="menu-item"><h3>Saffron Tea</h3><span class="menu-price">$4.99</span></div>
-<div class="menu-item"><h3>Green Tea</h3><span class="menu-price">$4.99</span></div>
-<div class="menu-item"><h3>Masala Chai</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Lahori Karahi (Chicken)</h3><span class="menu-price">Half $29.99 | Full $54.99</span></div>
+<div class="menu-item"><h3>Lahori Karahi (Mutton)</h3><span class="menu-price">Half $34.99 | Full $69.99</span></div>
+
+<div class="menu-item"><h3>Shinwari Karahi (Chicken)</h3><span class="menu-price">Half $29.99 | Full $54.99</span></div>
+<div class="menu-item"><h3>Shinwari Karahi (Mutton)</h3><span class="menu-price">Half $34.99 | Full $69.99</span></div>
+
+<div class="menu-item"><h3>White Karahi (Chicken)</h3><span class="menu-price">Half $29.99 | Full $54.99</span></div>
+<div class="menu-item"><h3>White Karahi (Mutton)</h3><span class="menu-price">Half $34.99 | Full $69.99</span></div>
+
+<div class="menu-item"><h3>Achari Karahi (Chicken)</h3><span class="menu-price">Half $29.99 | Full $54.99</span></div>
+<div class="menu-item"><h3>Achari Karahi (Mutton)</h3><span class="menu-price">Half $34.99 | Full $69.99</span></div>
+
+<div class="menu-item"><h3>Acha Karahi (Chicken)</h3><span class="menu-price">Half $29.99 | Full $54.99</span></div>
+<div class="menu-item"><h3>Koila Karahi (Mutton)</h3><span class="menu-price">Half $34.99 | Full $69.99</span></div>
+
+<div class="menu-item"><h3>Tikka Karahi</h3><span class="menu-price">Half $29.99 | Full $54.99</span></div>
+<div class="menu-item"><h3>Fish Karahi</h3><span class="menu-price">Half $29.99 | Full $54.99</span></div>
+
+<div class="menu-item"><h3>Qeema Karahi (Chicken)</h3><span class="menu-price">Half $29.99 | Full $64.99</span></div>
+<div class="menu-item"><h3>Qeema Karahi (Beef)</h3><span class="menu-price">Half $34.99 | Full $69.99</span></div>
+
+<div class="menu-item"><h3>Nihari</h3><span class="menu-price">$18.99</span></div>
+<div class="menu-item"><h3>Butter Chicken (Rice or Naan)</h3><span class="menu-price">$18.99</span></div>
+
+<div class="menu-item"><h3>Chef's Special Karahi (Mutton)</h3><span class="menu-price">Half $37.99 | Full $75.99</span></div>
+
+<div class="menu-item"><h3>Murgh Channa</h3><span class="menu-price">$15.99</span></div>
+
+<div class="menu-item"><h3>Karahi Paneer</h3><span class="menu-price">Half $19.99 | Full $34.99</span></div>
+
+<div class="menu-item"><h3>White Paneer Karahi</h3><span class="menu-price">Half $19.99 | Full $34.99</span></div>
+
+<div class="menu-item"><h3>Desi Chicken Karahi</h3><span class="menu-price">$34.99</span></div>
 
 </div>
 </div>
+
+
+<!-- DESSERTS -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+    <h2>Desserts</h2>
+    <span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Gulab Jamun</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Jalebi</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Kheer</h3><span class="menu-price">$5.99</span></div>
+<div class="menu-item"><h3>Mango Mousse</h3><span class="menu-price">$8.99</span></div>
+
+</div>
+</div>
+
+
+<!-- COLD BEVERAGES -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+    <h2>Cold Beverages</h2>
+    <span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Coke</h3><span class="menu-price">$1.99</span></div>
+<div class="menu-item"><h3>Diet Coke</h3><span class="menu-price">$1.99</span></div>
+<div class="menu-item"><h3>Zero Coke</h3><span class="menu-price">$1.99</span></div>
+<div class="menu-item"><h3>Sprite</h3><span class="menu-price">$1.99</span></div>
+<div class="menu-item"><h3>Crush Orange</h3><span class="menu-price">$1.99</span></div>
+<div class="menu-item"><h3>Salted Lassi</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Mango Lassi</h3><span class="menu-price">$5.99</span></div>
+<div class="menu-item"><h3>Sweet Lassi</h3><span class="menu-price">$5.99</span></div>
+<div class="menu-item"><h3>Ice Cream Shake</h3><span class="menu-price">$7.99</span></div>
+<div class="menu-item"><h3>Cold Coffee</h3><span class="menu-price">$6.99</span></div>
+
+</div>
+</div>
+
+
+<!-- HOT BEVERAGES -->
+
+<div class="menu-category">
+
+<div class="menu-category-title">
+    <h2>Hot Beverages</h2>
+    <span></span>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-item"><h3>Hot Coffee</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Karak Chai</h3><span class="menu-price">$2.99</span></div>
+<div class="menu-item"><h3>Karak Coffee</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Matka Chai</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Gur Chai</h3><span class="menu-price">$4.99</span></div>
+<div class="menu-item"><h3>Green Tea</h3><span class="menu-price">$2.99</span></div>
+<div class="menu-item"><h3>Ginger Tea</h3><span class="menu-price">$3.99</span></div>
+<div class="menu-item"><h3>Saffron Tea</h3><span class="menu-price">$3.99</span></div>
+<div class="menu-item"><h3>Masala Chai</h3><span class="menu-price">$3.99</span></div>
+<div class="menu-item"><h3>Doodh Patti</h3><span class="menu-price">$3.99</span></div>
+<div class="menu-item"><h3>Cardamom Tea</h3><span class="menu-price">$3.99</span></div>
+
+</div>
+</div>
+
 
 </section>
 
+<!-- ORDER FORM -->
 
+<div class="order-form" id="orderForm" style="display:none;">
+
+<h2>Complete Your Order</h2>
+
+<label>Your Name</label>
+<input type="text" id="customerName" placeholder="Enter your name">
+
+<label>Phone Number</label>
+<input type="tel" id="customerPhone" placeholder="Enter your phone number">
+
+<label>Order Type</label>
+
+<select id="orderType">
+<option value="Pickup">Pickup</option>
+<option value="Delivery">Delivery</option>
+</select>
+
+<label>Address</label>
+<textarea id="customerAddress" placeholder="Enter your address"></textarea>
+
+<button type="button" onclick="submitOrder()">Submit Order</button>
+
+</div>
+
+<!-- ORDER CART -->
+
+<!-- ONLINE RESERVATION -->
+
+<div class="reservation-form" id="reservation">
+
+<h2>Reserve a Table</h2>
+
+<label>Your Name</label>
+<input type="text" id="reservationName" placeholder="Enter your name">
+
+<label>Phone Number</label>
+<input type="tel" id="reservationPhone" placeholder="Enter your phone number">
+
+<label>Number of Guests</label>
+<input type="number" id="reservationGuests" min="1" placeholder="Number of guests">
+
+<label>Date</label>
+<input type="date" id="reservationDate">
+
+<label>Time</label>
+<input type="time" id="reservationTime">
+
+<label>Special Request</label>
+<textarea id="reservationRequest" placeholder="Any special request?"></textarea>
+
+<button type="button" onclick="submitReservation()">Reserve Table</button>
+
+</div>
+
+<!-- ORDER CART -->
+
+<!-- ORDER CART -->
+
+<div class="order-cart" id="orderCart">
+
+<h2>Your Order</h2>
+
+<div id="selectedItems">
+<p>No items selected yet.</p>
+</div>
+
+<div class="cart-total">
+<strong>Total: $<span id="cartTotal">0.00</span></strong>
+</div>
+
+<button type="button" onclick="placeOrder()">Place Order</button>
+
+</div>
 <!-- ================= ABOUT ================= -->
 
 <section class="about">
@@ -1613,7 +1991,7 @@ loading="lazy">
 alt="BBQ Junction Logo">
 
 <p>
-BBQ Junction Saskatoon — Pakistani, Indian and Halal cuisine.
+BBQ Junction Saskatoon - Pakistani, Indian and Halal cuisine.
 </p>
 
 </div>
@@ -1648,7 +2026,7 @@ BBQ Junction Saskatoon — Pakistani, Indian and Halal cuisine.
 
 
 <div class="copyright">
-© 2026 BBQ Junction Saskatoon. All Rights Reserved.
+ 
 </div>
 
 </footer>
@@ -1848,8 +2226,349 @@ autoFoodSlider("topSlider");
 
 autoFoodSlider("lovedSlider");
 
+let selectedItems = [];
 
+function selectItem(element, name, price) {
+
+    let existingItem = selectedItems.find(function(item) {
+        return item.element === element;
+    });
+
+    if (existingItem) {
+
+        selectedItems = selectedItems.filter(function(item) {
+            return item.element !== element;
+        });
+
+        element.classList.remove("selected");
+
+    } else {
+
+        selectedItems.push({
+            element: element,
+            name: name,
+            price: price,
+            quantity: 1
+        });
+
+        element.classList.add("selected");
+    }
+
+    updateOrderCart();
+}
+
+
+function updateOrderCart() {
+
+    let selectedBox =
+    document.getElementById("selectedItems");
+
+    let totalBox =
+    document.getElementById("cartTotal");
+
+    selectedBox.innerHTML = "";
+
+    let total = 0;
+
+
+    if (selectedItems.length === 0) {
+
+        selectedBox.innerHTML =
+        "<p>No items selected yet.</p>";
+
+        totalBox.textContent = "0.00";
+
+        return;
+    }
+
+
+    selectedItems.forEach(function(item) {
+
+        let itemTotal =
+        item.price * item.quantity;
+
+        total += itemTotal;
+
+
+        let div =
+        document.createElement("div");
+
+        div.style.marginBottom = "18px";
+
+
+        div.innerHTML =
+        "<div style='display:flex; justify-content:space-between; align-items:center;'>" +
+
+        "<strong>" +
+        item.name +
+        "</strong>" +
+
+        "<span>$" +
+        itemTotal.toFixed(2) +
+        "</span>" +
+
+        "</div>" +
+
+        "<div style='margin-top:8px;'>" +
+
+        "<button type='button' onclick='changeQuantity(\"" +
+        item.name +
+        "\", -1)'>-</button>" +
+
+        "<span style='margin:0 12px;'>" +
+        item.quantity +
+        "</span>" +
+
+        "<button type='button' onclick='changeQuantity(\"" +
+        item.name +
+        "\", 1)'>+</button>" +
+
+        "<button type='button' onclick='removeItem(\"" +
+        item.name +
+        "\")' style='margin-left:15px;'>Remove</button>" +
+
+        "</div>";
+
+
+        selectedBox.appendChild(div);
+
+    });
+
+
+    totalBox.textContent =
+    total.toFixed(2);
+}
+
+function changeQuantity(name, change){
+
+    let item = selectedItems.find(function(item){
+        return item.name === name;
+    });
+
+    if(!item){
+        return;
+    }
+
+    item.quantity += change;
+
+    if(item.quantity < 1){
+        item.quantity = 1;
+    }
+
+    updateOrderCart();
+}
+
+
+function removeItem(name){
+
+    selectedItems = selectedItems.filter(function(item){
+        return item.name !== name;
+    });
+
+    document.querySelectorAll(".menu-grid .menu-item").forEach(function(item){
+
+        let nameElement = item.querySelector("h3");
+
+        if(nameElement && nameElement.textContent.trim() === name){
+            item.classList.remove("selected");
+        }
+
+    });
+
+    updateOrderCart();
+}
+
+/* MAKE ALL FULL MENU ITEMS SELECTABLE */
+
+document.querySelectorAll(".menu-grid .menu-item").forEach(function(item) {
+
+    let nameElement =
+    item.querySelector("h3");
+
+    let priceElement =
+    item.querySelector(".menu-price");
+
+
+    if (!nameElement || !priceElement) {
+        return;
+    }
+
+
+    let name =
+    nameElement.textContent.trim();
+
+
+    let priceText =
+    priceElement.textContent;
+
+
+    let priceMatch =
+    priceText.match(/\$([0-9]+(?:\.[0-9]+)?)/);
+
+
+    if (!priceMatch) {
+        return;
+    }
+
+
+    let price =
+    parseFloat(priceMatch[1]);
+
+
+    item.classList.add("selectable-item");
+
+
+    item.onclick = function() {
+
+        selectItem(item, name, price);
+
+    };
+
+});
+
+
+function placeOrder(){
+
+    if(selectedItems.length === 0){
+
+        alert("Please select at least one item.");
+
+        return;
+    }
+
+    let orderForm =
+    document.getElementById("orderForm");
+
+    orderForm.style.display = "block";
+
+    orderForm.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+function submitOrder(){
+
+    let name =
+    document.getElementById("customerName").value;
+
+    let phone =
+    document.getElementById("customerPhone").value;
+
+    let orderType =
+    document.getElementById("orderType").value;
+
+    let address =
+    document.getElementById("customerAddress").value;
+
+    if(name === "" || phone === ""){
+
+        alert("Please enter your name and phone number.");
+
+        return;
+    }
+
+    if(orderType === "Delivery" && address === ""){
+
+        alert("Please enter your delivery address.");
+
+        return;
+    }
+
+    let order = [];
+    let total = 0;
+
+    selectedItems.forEach(function(item){
+
+        let itemTotal =
+        item.price * item.quantity;
+
+        order.push(
+            item.quantity +
+            " x " +
+            item.name +
+            " - $" +
+            itemTotal.toFixed(2)
+        );
+
+        total += itemTotal;
+
+    });
+
+    let message =
+    "BBQ JUNCTION SASKATOON ORDER\n\n" +
+    "Name: " + name +
+    "\nPhone: " + phone +
+    "\nOrder Type: " + orderType +
+    "\nAddress: " + address +
+    "\n\nORDER:\n" +
+    order.join("\n") +
+    "\n\nTotal: $" +
+    total.toFixed(2);
+
+    let whatsappNumber =
+    "13069742455";
+
+    let whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+}
+
+/* ONLINE RESERVATION */
+
+function submitReservation(){
+
+    let name =
+    document.getElementById("reservationName").value;
+
+    let phone =
+    document.getElementById("reservationPhone").value;
+
+    let guests =
+    document.getElementById("reservationGuests").value;
+
+    let date =
+    document.getElementById("reservationDate").value;
+
+    let time =
+    document.getElementById("reservationTime").value;
+
+    let request =
+    document.getElementById("reservationRequest").value;
+
+    if(name === "" || phone === "" || guests === "" || date === "" || time === ""){
+
+        alert("Please fill in all required reservation details.");
+
+        return;
+    }
+
+    let message =
+    "BBQ JUNCTION SASKATOON TABLE RESERVATION\n\n" +
+    "Name: " + name +
+    "\nPhone: " + phone +
+    "\nGuests: " + guests +
+    "\nDate: " + date +
+    "\nTime: " + time +
+    "\nSpecial Request: " + request;
+
+    let whatsappNumber =
+    "13069742455";
+
+    let whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+}
 </script>
 
 </body>
+
 </html>
